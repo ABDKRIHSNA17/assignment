@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addDetails } from "../redux/details";
 
 function Form() {
   const dispatch = useDispatch();
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState([{
     name: '',
     email: '',
     message: '',
-  });
+  }]);
   const [errors, setErrors] = useState({});
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
 
@@ -41,6 +41,9 @@ function Form() {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
     validateField(name, value);
   };
+
+
+
 
   
 

@@ -1,12 +1,15 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { clearData } from "../redux/details";
+import { useDispatch } from "react-redux";
 
-const handleClear = () => {
-  dispatch(clearData());
-};
+
 function Details() {
   const detailsList = useSelector((state) => state.cart.detailsState);
+  const dispatch = useDispatch();
+  const handleClear = () => {
+  dispatch(clearData());
+};
   return (
     <>
       <button
